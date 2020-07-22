@@ -39,6 +39,12 @@ body {
   color: $color-text;
 }
 
+.container {
+  padding: 0 1.5rem;
+  max-width: 120rem;
+  margin: 0 auto;
+}
+
 .v-window__next {
   right: 0;
 }

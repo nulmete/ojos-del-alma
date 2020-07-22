@@ -2,7 +2,7 @@
   <div class="inicio">
     <hero :hero-heading="heroHeading" />
     <section class="por-que container">
-      <main-grid :heading="heading" :text="text" />
+      <main-grid :heading="heading" :text="text" :index="1" />
     </section>
     <section class="testimonios">
       <heading-secondary :style="{ textAlign: 'center' }">
