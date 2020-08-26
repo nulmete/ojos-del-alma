@@ -1,55 +1,35 @@
 <template>
-  <section
-    :class="['hero', { 'hero--etapas': $route.name === 'etapas' }]">
-    <h1 class="hero__text">
-      <em><strong>“{{ heroHeading }}”</strong></em>
-    </h1>
-  </section>
+  <v-carousel
+    cycle
+    height="100vh"
+    hide-delimiters
+    hide-delimiter-background
+    :show-arrows="false"
+  >
+    <v-carousel-item
+      v-for="(slide, i) in slides"
+      :key="i"
+      :src="slide.src"
+    >
+      <v-overlay :absolute="true">
+        <v-container>
+          <h1 class="text-h5 text-md-h4 text-lg-h3 font-weight-light text-center grey--text text--lighten-5">
+            {{ slide.text }}
+          </h1>
+        </v-container>
+      </v-overlay>
+    </v-carousel-item>
+  </v-carousel>
 </template>
 
 <script>
 export default {
-  name: 'Hero',
+  name: 'hero',
   props: {
-    heroHeading: {
-      type: String,
+    slides: {
+      type: Array,
       required: true
     }
   }
 }
 </script>
-
-<style scoped lang="scss">
-  .hero {
-    min-height: 100vh;
-    background-image: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)), url('../assets/fotos/portada/8.jpg');
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    position: relative;
-
-    &--etapas {
-      background-image: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)), url('../assets/fotos/portada/6.jpg');
-    }
-
-    &__text {
-      font-size: 4rem;
-      font-weight: 400;
-      position: absolute;
-      top: 65%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      color: $color-white;
-      padding: 1.5rem;
-      background: rgba(0,0,0,.6);
-    }
-
-    &--etapas &__text {
-      font-size: 3.4rem;
-      font-weight: 300;
-      left: 5%;
-      transform: translate(0);
-      max-width: 50vw;
-    }
-  }
-</style>

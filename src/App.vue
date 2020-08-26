@@ -1,21 +1,55 @@
 <template>
-  <div id="app">
-    <MainHeader />
-    <router-view :key="$route.fullPath" />
-  </div>
+  <v-app>
+    <Navbar />
+    <v-main class="grey lighten-4">
+      <router-view />
+    </v-main>
+    <v-footer padless>
+      <v-card
+        flat
+        tile
+        width="100%"
+        class="grey darken-4 white--text text-center"
+      >
+        <v-card-text>
+          <v-btn
+            v-for="icon in icons"
+            :key="icon"
+            class="mx-4 white--text"
+            icon
+          >
+            <v-icon size="24px">{{ icon }}</v-icon>
+          </v-btn>
+        </v-card-text>
+
+        <v-card-text class="white--text">
+          {{ new Date().getFullYear() }} — <strong>5 Sentidos</strong>
+        </v-card-text>
+      </v-card>
+    </v-footer>
+  </v-app>
 </template>
 
 <script>
-import MainHeader from '@/components/MainHeader'
+import Navbar from '@/components/Navbar'
 
 export default {
   name: 'App',
-  components: { MainHeader }
+  components: {
+    Navbar
+  },
+  data () {
+    return {
+      icons: [
+        'mdi-facebook',
+        'mdi-instagram'
+      ]
+    }
+  }
 }
 </script>
 
 <style lang="scss">
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Nunito&display=swap');
 #app {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -29,23 +63,7 @@ export default {
   padding: 0;
 }
 
-html {
-  font-size: 62.5% !important;
-}
-
 body {
   box-sizing: border-box;
-  font-family: 'Montserrat', sans-serif;
-  color: $color-text;
-}
-
-.container {
-  padding: 0 1.5rem;
-  max-width: 120rem;
-  margin: 0 auto;
-}
-
-.v-window__next {
-  right: 0;
 }
 </style>
