@@ -8,18 +8,15 @@
         </p>
       </v-col>
       <v-spacer />
-      <v-col cols="12" md="7">
+      <v-col cols="12" md="6">
         <v-row>
-          <v-col cols="12" sm="6">
+          <v-col cols="12">
             <v-img
-              aspect-ratio="1"
-              :src="slides[1].src"
-            />
-          </v-col>
-          <v-col cols="12" sm="6">
-            <v-img
-              aspect-ratio="1"
-              :src="slides[0].src"
+              :src="photo.sm"
+              :srcset="`${photo.sm} 640w,
+                      ${photo.md} 1280w,
+                      ${photo.lg} 1920w`"
+              sizes="(min-width: 960px) 50vw, 100vw"
             />
           </v-col>
         </v-row>
@@ -31,10 +28,13 @@
 <script>
 export default {
   name: 'porque',
-  props: {
-    slides: {
-      type: Array,
-      required: true
+  data () {
+    return {
+      photo: {
+        sm: require('../../assets/fotos/porque/porque-640w.jpg'),
+        md: require('../../assets/fotos/porque/porque-1280w.jpg'),
+        lg: require('../../assets/fotos/porque/porque-1920w.jpg')
+      }
     }
   }
 }

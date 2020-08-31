@@ -1,26 +1,10 @@
 <template>
   <div class="etapas">
-    <section class="mb-16">
-      <v-img
-        max-height="45vh"
-        :src="require('../assets/fotos/portada/8.jpg')"
-      >
-        <v-overlay :absolute="true">
-          <v-row
-            class="fill-height"
-            align="center"
-            justify="center"
-          >
-            <v-col class="text-center" cols="12">
-              <h1 class="text-h4 text-lg-h3 font-weight-thin text-center grey--text text--lighten-5 mb-2">Etapas</h1>
-              <h4 class="text-subtitle-2 text-md-subtitle-1">Conocé cómo trabajamos</h4>
-            </v-col>
-          </v-row>
-        </v-overlay>
-      </v-img>
+    <section class="section-spacing">
+      <HeroSecondary :header="header" />
     </section>
 
-    <section class="mb-16">
+    <section class="section-spacing">
       <v-container>
         <Etapa
           v-for="(etapa, i) in etapas"
@@ -39,34 +23,76 @@
 
 <script>
 import Etapa from '@/components/Etapas/Etapa'
+import HeroSecondary from '@/components/HeroSecondary'
 
 export default {
   name: 'etapas',
   components: {
-    Etapa
+    Etapa,
+    HeroSecondary
   },
   data () {
     return {
+      header: {
+        sm: require('../assets/fotos/etapas/etapas-portada-640w.jpg'),
+        md: require('../assets/fotos/etapas/etapas-portada-1280w.jpg'),
+        lg: require('../assets/fotos/etapas/etapas-portada-1920w.jpg'),
+        xl: require('../assets/fotos/etapas/etapas-portada-6000w.jpg'),
+        title: 'Etapas',
+        subtitle: 'Conocé cómo trabajamos'
+      },
       etapas: [
         {
           name: 'Entrevista',
-          description: 'La primera reunión presencial, fundamental para conocernos, contarnos sus necesidades y tomar contacto con el espacio. Esta visita tiene un costo el cual será descontado del presupuesto final.'
+          description: 'La primera reunión presencial, fundamental para conocernos, contarnos sus necesidades y tomar contacto con el espacio. Esta visita tiene un costo el cual será descontado del presupuesto final.',
+          img: {
+            sm: require('../assets/fotos/etapas/entrevista-500w.jpg'),
+            md: require('../assets/fotos/etapas/entrevista-900w.jpg'),
+            lg: require('../assets/fotos/etapas/entrevista-1600w.jpg')
+          }
         },
         {
           name: 'Croquis preliminares',
-          description: 'Esbozos de las primeras propuestas, que pueden tener modificaciones. Realizados generalmente a mano alzada para mostrar dimensiones, descriptionuras y colores.'
+          description: 'Esbozos de las primeras propuestas, que pueden tener modificaciones. Realizados generalmente a mano alzada para mostrar dimensiones, texturas y colores.',
+          img: [
+            {
+              sm: require('../assets/fotos/etapas/croquis-1-500w.jpg'),
+              md: require('../assets/fotos/etapas/croquis-1-900w.jpg'),
+              lg: require('../assets/fotos/etapas/croquis-1-1600w.jpg')
+            },
+            {
+              sm: require('../assets/fotos/etapas/croquis-2-500w.jpg'),
+              md: require('../assets/fotos/etapas/croquis-2-900w.jpg'),
+              lg: require('../assets/fotos/etapas/croquis-2-1600w.jpg')
+            }
+          ]
         },
         {
           name: 'Anteproyecto',
-          description: 'Muestra los distintos elementos de la composición espacial, materiales y zonificación. Incluímos una presentación 3D para poder apreciar las cualidades del proyecto. Presentación de presupuesto estimado, el cual estará divido por rubro y sectores del proyecto para un cómodo manejo del cliente.'
+          description: 'Muestra los distintos elementos de la composición espacial, materiales y zonificación. Incluímos una presentación 3D para poder apreciar las cualidades del proyecto. Presentación de presupuesto estimado, el cual estará divido por rubro y sectores del proyecto para un cómodo manejo del cliente.',
+          img: {
+            sm: require('../assets/fotos/etapas/anteproyecto-500w.jpg'),
+            md: require('../assets/fotos/etapas/anteproyecto-900w.jpg'),
+            lg: require('../assets/fotos/etapas/anteproyecto-1600w.jpg')
+          }
         },
         {
           name: 'Proyecto',
-          description: 'Confirmación del diseño y ajuste del Presupuesto (si correspondiere). Con ésto, se presentarán los Planos técnicos mostrando los detalles constructivos, sistemas de iluminación, riego, estructuras, plano de plantación. La finalidad de estos planos es para el caso en que nuestro trabajo finalice en el Proyecto.'
+          description: 'Confirmación del diseño y ajuste del Presupuesto (si correspondiere). Con ésto, se presentarán los Planos técnicos mostrando los detalles constructivos, sistemas de iluminación, riego, estructuras, plano de plantación. La finalidad de estos planos es para el caso en que nuestro trabajo finalice en el Proyecto.',
+          img: {
+            sm: require('../assets/fotos/etapas/proyecto-500w.jpg'),
+            md: require('../assets/fotos/etapas/proyecto-900w.jpg'),
+            lg: require('../assets/fotos/etapas/proyecto-1600w.jpg')
+          }
         },
         {
           name: 'Ejecución',
-          description: '¡Momento de hacer realidad los planos!'
+          description: '¡Momento de hacer realidad los planos!',
+          img: {
+            sm: require('../assets/fotos/etapas/ejecucion-500w.jpg'),
+            md: require('../assets/fotos/etapas/ejecucion-900w.jpg'),
+            lg: require('../assets/fotos/etapas/ejecucion-1600w.jpg')
+          }
         }
       ]
     }

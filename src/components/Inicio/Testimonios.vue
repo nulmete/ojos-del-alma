@@ -1,17 +1,24 @@
 <template>
-  <v-carousel cycle>
+  <v-carousel height="70vh" cycle>
     <v-carousel-item
-      v-for="(item, i) in testimonios"
+      v-for="(slide, i) in slides"
       :key="i"
-      :src="item.src"
     >
-      <v-overlay :absolute="true">
-        <v-container>
-          <p class="text-caption text-md-body-2 grey--text text--lighten-5">
-            {{ item.text }}
-          </p>
-        </v-container>
-      </v-overlay>
+      <v-img
+        height="100%"
+        :src="slide.sm"
+        :srcset="`${slide.sm} 640w,
+                ${slide.md} 1280w,
+                ${slide.lg} 1920w`"
+      >
+        <!-- <v-overlay :absolute="true">
+          <v-container>
+            <p class="text-caption text-md-body-2 grey--text text--lighten-5">
+              {{ item.text }}
+            </p>
+          </v-container>
+        </v-overlay> -->
+      </v-img>
     </v-carousel-item>
   </v-carousel>
 </template>
@@ -21,22 +28,21 @@ export default {
   name: 'testimonios',
   data () {
     return {
-      testimonios: [
+      slides: [
         {
-          src: require('../../assets/fotos/portada/1.jpg'),
-          text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit similique nisi asperiores eligendi, natus quis itaque eveniet voluptatum nam dolores voluptates ducimus repellendus minima quia.'
+          sm: require('../../assets/fotos/testimonios/testimonio-1-640w.jpg'),
+          md: require('../../assets/fotos/testimonios/testimonio-1-1280w.jpg'),
+          lg: require('../../assets/fotos/testimonios/testimonio-1-1920w.jpg')
         },
         {
-          src: require('../../assets/fotos/portada/2.jpg'),
-          text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit similique nisi asperiores eligendi, natus quis itaque eveniet voluptatum nam dolores voluptates ducimus repellendus minima quia.'
+          sm: require('../../assets/fotos/testimonios/testimonio-2-640w.jpg'),
+          md: require('../../assets/fotos/testimonios/testimonio-2-1280w.jpg'),
+          lg: require('../../assets/fotos/testimonios/testimonio-2-1920w.jpg')
         },
         {
-          src: require('../../assets/fotos/portada/3.jpg'),
-          text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit similique nisi asperiores eligendi, natus quis itaque eveniet voluptatum nam dolores voluptates ducimus repellendus minima quia.'
-        },
-        {
-          src: require('../../assets/fotos/portada/4.jpg'),
-          text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit similique nisi asperiores eligendi, natus quis itaque eveniet voluptatum nam dolores voluptates ducimus repellendus minima quia.'
+          sm: require('../../assets/fotos/testimonios/testimonio-3-640w.jpg'),
+          md: require('../../assets/fotos/testimonios/testimonio-3-1280w.jpg'),
+          lg: require('../../assets/fotos/testimonios/testimonio-3-1920w.jpg')
         }
       ]
     }

@@ -4,7 +4,7 @@
     <v-main class="grey lighten-4">
       <router-view />
     </v-main>
-    <v-footer padless>
+    <v-footer padless v-if="$route.path !== '/proyectos'">
       <v-card
         flat
         tile
@@ -65,5 +65,13 @@ export default {
 
 body {
   box-sizing: border-box;
+}
+
+::selection {
+  background-color: #C5E1A5;
+}
+
+.section-spacing {
+  margin-bottom: 10rem;
 }
 </style>

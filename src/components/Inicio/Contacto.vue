@@ -8,14 +8,15 @@
       </v-card-title>
       <v-card-text>
         <v-form ref="form" v-model="valid" lazy-validation>
-          <v-text-field outlined clearable label="Nombre" v-model="name" prepend-icon="mdi-account" :rules="nameRule"></v-text-field>
-          <v-text-field outlined clearable label="Correo electrónico" v-model="email" prepend-icon="mdi-email" :rules="emailRule"></v-text-field>
-          <v-textarea outlined label="Mensaje" v-model="message" prepend-icon="mdi-pencil" :rules="messageRule"></v-textarea>
+          <v-text-field color="light-green darken-4" outlined clearable label="Nombre" v-model="name" prepend-icon="mdi-account" :rules="nameRule"></v-text-field>
+          <v-text-field color="light-green darken-4" outlined clearable label="Correo electrónico" v-model="email" prepend-icon="mdi-email" :rules="emailRule"></v-text-field>
+          <v-textarea color="light-green darken-4" outlined label="Mensaje" v-model="message" prepend-icon="mdi-pencil" :rules="messageRule"></v-textarea>
         </v-form>
       </v-card-text>
       <v-card-actions>
         <v-btn
-          color="orange darken-3"
+          x-large
+          color="amber darken-4"
           class="white--text"
           :disabled="!valid"
           @click="validate"

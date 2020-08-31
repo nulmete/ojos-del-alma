@@ -1,7 +1,7 @@
 <template>
   <div class="etapa">
     <v-row>
-      <v-col cols="12" md="4" class="etapa__text d-flex flex-column">
+      <v-col cols="12" md="5" class="etapa__text d-flex flex-column">
         <h2 class="text-h4 text-uppercase mb-6">
           {{ etapa.name }}
         </h2>
@@ -9,19 +9,29 @@
           {{ etapa.description }}
         </p>
       </v-col>
-      <v-col cols="12" md="8" class="etapa__image d-flex" >
-          <v-col cols="12" md="6">
+      <v-spacer class="etapa__spacer"></v-spacer>
+      <v-col cols="12" md="6" class="etapa__image d-flex">
+          <template v-if="Array.isArray(etapa.img)">
+            <v-col cols="6" v-for="(img, i) in etapa.img" :key="i">
+              <v-img
+                aspect-ratio="1"
+                :src="img.sm"
+                :srcset="`${img.sm} 500w,
+                          ${img.md} 900w,
+                          ${img.lg} 1600w`"
+                sizes="(min-width: 960px) 25vw, 50vw"
+              />
+            </v-col>
+          </template>
+          <template v-else>
             <v-img
-              aspect-ratio="1.3"
-              :src="require('../../assets/fotos/portada/3.jpg')"
+              :src="etapa.img.sm"
+              :srcset="`${etapa.img.sm} 500w,
+                        ${etapa.img.md} 900w,
+                        ${etapa.img.lg} 1600w`"
+              sizes="(min-width: 960px) 50vw, 100vw"
             />
-          </v-col>
-          <v-col cols="12" md="6">
-            <v-img
-              aspect-ratio="1.3"
-              :src="require('../../assets/fotos/portada/4.jpg')"
-            />
-          </v-col>
+          </template>
       </v-col>
     </v-row>
 
@@ -41,11 +51,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .etapa:nth-child(even) .etapa__image {
-    order: 1;
-  }
+  @media only screen and (min-width: 960px) {
+    .etapa:nth-child(even) .etapa__image {
+      order: 0;
+    }
 
-  .etapa:nth-child(even) .etapa__text {
-    order: 2;
+    .etapa:nth-child(even) .etapa__spacer {
+      order: 1;
+    }
+
+    .etapa:nth-child(even) .etapa__text {
+      order: 2;
+    }
   }
 </style>

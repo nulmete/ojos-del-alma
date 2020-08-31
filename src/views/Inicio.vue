@@ -1,22 +1,22 @@
 <template>
   <div class="inicio">
     <!-- Hero -->
-    <section class="mb-16">
-      <Hero :slides="slides" />
+    <section class="section-spacing">
+      <Hero />
     </section>
 
     <!-- Sección "Por qué 5 sentidos" -->
-    <section class="mb-16">
-      <Porque :slides="slides" />
+    <section class="section-spacing">
+      <Porque />
     </section>
 
     <!-- Sección Testimonios -->
-    <section class="mb-16">
+    <section class="section-spacing">
       <Testimonios />
     </section>
 
     <!-- Sección Contacto -->
-    <section class="mb-16">
+    <section class="section-spacing">
       <Contacto />
     </section>
   </div>
@@ -35,20 +35,15 @@ export default {
     Porque,
     Testimonios,
     Contacto
-  },
-  data () {
-    return {
-      slides: [
-        {
-          src: require('../assets/fotos/portada/6.jpg'),
-          text: 'Quien no planta el jardín en su interior, no planta jardines en el exterior y tampoco pasea por ellos'
-        },
-        {
-          src: require('../assets/fotos/portada/7.jpg'),
-          text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi accusantium consectetur quas laboriosam'
-        }
-      ]
-    }
   }
 }
 </script>
+
+<style scoped>
+  .hero,
+  .porque,
+  .testimonios,
+  .contacto {
+    margin-bottom: 10rem;
+  }
+</style>
