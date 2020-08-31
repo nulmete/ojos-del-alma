@@ -37,24 +37,24 @@ export default {
     return {
       slides: [
         {
-          sm: require('../assets/fotos/portada/portada-1-640w.jpg'),
-          md: require('../assets/fotos/portada/portada-1-1280w.jpg'),
-          lg: require('../assets/fotos/portada/portada-1-1920w.jpg'),
-          xl: require('../assets/fotos/portada/portada-1-4000w.jpg'),
+          sm: require('@/assets/fotos/portada/portada-1-640w-min.jpg'),
+          md: require('@/assets/fotos/portada/portada-1-1280w-min.jpg'),
+          lg: require('@/assets/fotos/portada/portada-1-1920w-min.jpg'),
+          xl: require('@/assets/fotos/portada/portada-1-4000w-min.jpg'),
           text: 'Text 1'
         },
         {
-          sm: require('../assets/fotos/portada/portada-2-640w.jpg'),
-          md: require('../assets/fotos/portada/portada-2-1280w.jpg'),
-          lg: require('../assets/fotos/portada/portada-2-1920w.jpg'),
-          xl: require('../assets/fotos/portada/portada-2-4000w.jpg'),
+          sm: require('@/assets/fotos/portada/portada-2-640w-min.jpg'),
+          md: require('@/assets/fotos/portada/portada-2-1280w-min.jpg'),
+          lg: require('@/assets/fotos/portada/portada-2-1920w-min.jpg'),
+          xl: require('@/assets/fotos/portada/portada-2-4000w-min.jpg'),
           text: 'Text 2'
         },
         {
-          sm: require('../assets/fotos/portada/portada-3-640w.jpg'),
-          md: require('../assets/fotos/portada/portada-3-1280w.jpg'),
-          lg: require('../assets/fotos/portada/portada-3-1920w.jpg'),
-          xl: require('../assets/fotos/portada/portada-3-4000w.jpg'),
+          sm: require('@/assets/fotos/portada/portada-3-640w-min.jpg'),
+          md: require('@/assets/fotos/portada/portada-3-1280w-min.jpg'),
+          lg: require('@/assets/fotos/portada/portada-3-1920w-min.jpg'),
+          xl: require('@/assets/fotos/portada/portada-3-4000w-min.jpg'),
           text: 'Text 3'
         }
       ]

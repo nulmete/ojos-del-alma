@@ -31,9 +31,9 @@ export default {
   data () {
     return {
       photo: {
-        sm: require('../../assets/fotos/porque/porque-640w.jpg'),
-        md: require('../../assets/fotos/porque/porque-1280w.jpg'),
-        lg: require('../../assets/fotos/porque/porque-1920w.jpg')
+        sm: require('@/assets/fotos/porque/porque-640w-min.jpg'),
+        md: require('@/assets/fotos/porque/porque-1280w-min.jpg'),
+        lg: require('@/assets/fotos/porque/porque-1920w-min.jpg')
       }
     }
   }

@@ -30,19 +30,19 @@ export default {
     return {
       slides: [
         {
-          sm: require('../../assets/fotos/testimonios/testimonio-1-640w.jpg'),
-          md: require('../../assets/fotos/testimonios/testimonio-1-1280w.jpg'),
-          lg: require('../../assets/fotos/testimonios/testimonio-1-1920w.jpg')
+          sm: require('@/assets/fotos/testimonios/testimonio-1-640w-min.jpg'),
+          md: require('@/assets/fotos/testimonios/testimonio-1-1280w-min.jpg'),
+          lg: require('@/assets/fotos/testimonios/testimonio-1-1920w-min.jpg')
         },
         {
-          sm: require('../../assets/fotos/testimonios/testimonio-2-640w.jpg'),
-          md: require('../../assets/fotos/testimonios/testimonio-2-1280w.jpg'),
-          lg: require('../../assets/fotos/testimonios/testimonio-2-1920w.jpg')
+          sm: require('@/assets/fotos/testimonios/testimonio-2-640w-min.jpg'),
+          md: require('@/assets/fotos/testimonios/testimonio-2-1280w-min.jpg'),
+          lg: require('@/assets/fotos/testimonios/testimonio-2-1920w-min.jpg')
         },
         {
-          sm: require('../../assets/fotos/testimonios/testimonio-3-640w.jpg'),
-          md: require('../../assets/fotos/testimonios/testimonio-3-1280w.jpg'),
-          lg: require('../../assets/fotos/testimonios/testimonio-3-1920w.jpg')
+          sm: require('@/assets/fotos/testimonios/testimonio-3-640w-min.jpg'),
+          md: require('@/assets/fotos/testimonios/testimonio-3-1280w-min.jpg'),
+          lg: require('@/assets/fotos/testimonios/testimonio-3-1920w-min.jpg')
         }
       ]
     }

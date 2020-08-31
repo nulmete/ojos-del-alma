@@ -13,10 +13,11 @@ export default {
   data () {
     return {
       header: {
-        sm: require('../assets/fotos/proyectos/proyectos-portada-en-construccion-640w.jpg'),
-        md: require('../assets/fotos/proyectos/proyectos-portada-en-construccion-1280w.jpg'),
-        lg: require('../assets/fotos/proyectos/proyectos-portada-en-construccion-1920w.jpg'),
-        xl: require('../assets/fotos/proyectos/proyectos-portada-en-construccion-6000w.jpg'),
+        xs: require('@/assets/fotos/proyectos/proyectos-portada-en-construccion-640w-min.jpg'),
+        sm: require('@/assets/fotos/proyectos/proyectos-portada-en-construccion-1280w-min.jpg'),
+        md: require('@/assets/fotos/proyectos/proyectos-portada-en-construccion-1920w-min.jpg'),
+        lg: require('@/assets/fotos/proyectos/proyectos-portada-en-construccion-3000w-min.jpg'),
+        xl: require('@/assets/fotos/proyectos/proyectos-portada-en-construccion-6000w-min.jpg'),
         title: 'En construcción',
         subtitle: ''
       }

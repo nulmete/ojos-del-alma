@@ -1,10 +1,11 @@
 <template>
   <v-img
     :max-height="maxHeight"
-    :src="header.sm"
-    :srcset="`${header.sm} 640w,
-              ${header.md} 1280w,
-              ${header.lg} 1920w,
+    :src="header.xs"
+    :srcset="`${header.xs} 640w,
+              ${header.sm} 1280w,
+              ${header.md} 1920w,
+              ${header.lg} 3000w,
               ${header.xl} 6000w`"
   >
     <v-overlay :absolute="true">

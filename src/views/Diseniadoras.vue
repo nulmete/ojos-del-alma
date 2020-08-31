@@ -26,10 +26,11 @@ export default {
   data () {
     return {
       header: {
-        sm: require('../assets/fotos/diseniadoras/diseniadoras-portada-640w.jpg'),
-        md: require('../assets/fotos/diseniadoras/diseniadoras-portada-1280w.jpg'),
-        lg: require('../assets/fotos/diseniadoras/diseniadoras-portada-1920w.jpg'),
-        xl: require('../assets/fotos/diseniadoras/diseniadoras-portada-6000w.jpg'),
+        xs: require('@/assets/fotos/diseniadoras/diseniadoras-portada-640w-min.jpg'),
+        sm: require('@/assets/fotos/diseniadoras/diseniadoras-portada-1280w-min.jpg'),
+        md: require('@/assets/fotos/diseniadoras/diseniadoras-portada-1920w-min.jpg'),
+        lg: require('@/assets/fotos/diseniadoras/diseniadoras-portada-3000w-min.jpg'),
+        xl: require('@/assets/fotos/diseniadoras/diseniadoras-portada-6000w-min.jpg'),
         title: 'Las diseñadoras',
         subtitle: 'Conocé más sobre nosotras'
       },
@@ -39,13 +40,13 @@ export default {
       ],
       diseniadoras: [
         {
-          avatar: require('../assets/fotos/diseniadoras/lmedina.png'),
+          avatar: require('@/assets/fotos/diseniadoras/lmedina-min.png'),
           name: 'Laura Beatriz Medina',
           job: 'Paisajista',
           profile: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, fugiat ratione.'
         },
         {
-          avatar: require('../assets/fotos/diseniadoras/lb.png'),
+          avatar: require('@/assets/fotos/diseniadoras/lb-min.png'),
           name: 'Laura 2',
           job: 'Arquitecta',
           profile: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, fugiat ratione.'
