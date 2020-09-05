@@ -29,8 +29,6 @@ export default {
         xs: require('@/assets/fotos/diseniadoras/diseniadoras-portada-640w-min.jpg'),
         sm: require('@/assets/fotos/diseniadoras/diseniadoras-portada-1280w-min.jpg'),
         md: require('@/assets/fotos/diseniadoras/diseniadoras-portada-1920w-min.jpg'),
-        lg: require('@/assets/fotos/diseniadoras/diseniadoras-portada-3000w-min.jpg'),
-        xl: require('@/assets/fotos/diseniadoras/diseniadoras-portada-6000w-min.jpg'),
         title: 'Las diseñadoras',
         subtitle: 'Conocé más sobre nosotras'
       },

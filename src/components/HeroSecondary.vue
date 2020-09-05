@@ -4,9 +4,7 @@
     :src="header.xs"
     :srcset="`${header.xs} 640w,
               ${header.sm} 1280w,
-              ${header.md} 1920w,
-              ${header.lg} 3000w,
-              ${header.xl} 6000w`"
+              ${header.md} 1920w`"
   >
     <v-overlay :absolute="true">
       <v-row

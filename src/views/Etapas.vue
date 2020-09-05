@@ -37,8 +37,6 @@ export default {
         xs: require('@/assets/fotos/etapas/etapas-portada-640w-min.jpg'),
         sm: require('@/assets/fotos/etapas/etapas-portada-1280w-min.jpg'),
         md: require('@/assets/fotos/etapas/etapas-portada-1920w-min.jpg'),
-        lg: require('@/assets/fotos/etapas/etapas-portada-3000w-min.jpg'),
-        xl: require('@/assets/fotos/etapas/etapas-portada-6000w-min.jpg'),
         title: 'Etapas',
         subtitle: 'Conocé cómo trabajamos'
       },
