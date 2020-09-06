@@ -1,10 +1,10 @@
 <template>
   <v-img
     :max-height="maxHeight"
-    :src="header.xs"
-    :srcset="`${header.xs} 640w,
-              ${header.sm} 1280w,
-              ${header.md} 1920w`"
+    :src="imagePath(header.xs)"
+    :srcset="`${imagePath(header.xs)} 640w,
+              ${imagePath(header.sm)} 1280w,
+              ${imagePath(header.md)} 1920w`"
   >
     <v-overlay :absolute="true">
       <v-row
@@ -26,7 +26,10 @@
 </template>
 
 <script>
+import imageMixin from '@/mixins/images'
+
 export default {
+  mixins: [imageMixin],
   props: {
     header: {
       type: Object,

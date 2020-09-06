@@ -4,7 +4,7 @@
       <v-row dense class="flex-column">
         <v-col class="d-flex justify-center align-center">
           <v-avatar size="165">
-            <v-img :src="diseniadora.avatar" />
+            <v-img :src="imagePath(diseniadora.avatar)" />
           </v-avatar>
         </v-col>
         <v-col>
@@ -24,7 +24,10 @@
 </template>
 
 <script>
+import imageMixin from '@/mixins/images'
+
 export default {
+  mixins: [imageMixin],
   props: {
     diseniadora: {
       type: Object,

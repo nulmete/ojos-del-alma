@@ -12,10 +12,10 @@
         <v-row>
           <v-col cols="12">
             <v-img
-              :src="photo.sm"
-              :srcset="`${photo.sm} 640w,
-                      ${photo.md} 1280w,
-                      ${photo.lg} 1920w`"
+              :src="imagePath(photo.sm)"
+              :srcset="`${imagePath(photo.sm)} 640w,
+                      ${imagePath(photo.md)} 1280w,
+                      ${imagePath(photo.lg)} 1920w`"
               sizes="(min-width: 960px) 50vw, 100vw"
             />
           </v-col>
@@ -26,14 +26,17 @@
 </template>
 
 <script>
+import imageMixin from '@/mixins/images'
+
 export default {
   name: 'porque',
+  mixins: [imageMixin],
   data () {
     return {
       photo: {
-        sm: require('@/assets/fotos/porque/porque-640w-min.jpg'),
-        md: require('@/assets/fotos/porque/porque-1280w-min.jpg'),
-        lg: require('@/assets/fotos/porque/porque-1920w-min.jpg')
+        sm: '/porque-640w-min.jpg',
+        md: '/porque-1280w-min.jpg',
+        lg: '/porque-1920w-min.jpg'
       }
     }
   }

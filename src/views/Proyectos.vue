@@ -13,9 +13,9 @@ export default {
   data () {
     return {
       header: {
-        xs: require('@/assets/fotos/proyectos/proyectos-portada-en-construccion-640w-min.jpg'),
-        sm: require('@/assets/fotos/proyectos/proyectos-portada-en-construccion-1280w-min.jpg'),
-        md: require('@/assets/fotos/proyectos/proyectos-portada-en-construccion-1920w-min.jpg'),
+        xs: '/proyectos-portada-en-construccion-640w-min.jpg',
+        sm: '/proyectos-portada-en-construccion-1280w-min.jpg',
+        md: '/proyectos-portada-en-construccion-1920w-min.jpg',
         title: 'En construcción',
         subtitle: ''
       }

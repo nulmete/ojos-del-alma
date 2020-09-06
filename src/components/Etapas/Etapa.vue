@@ -15,20 +15,20 @@
             <v-col cols="6" v-for="(img, i) in etapa.img" :key="i">
               <v-img
                 aspect-ratio="1"
-                :src="img.sm"
-                :srcset="`${img.sm} 500w,
-                          ${img.md} 900w,
-                          ${img.lg} 1600w`"
+                :src="imagePath(img.sm)"
+                :srcset="`${imagePath(img.sm)} 500w,
+                          ${imagePath(img.md)} 900w,
+                          ${imagePath(img.lg)} 1600w`"
                 sizes="(min-width: 960px) 25vw, 50vw"
               />
             </v-col>
           </template>
           <template v-else>
             <v-img
-              :src="etapa.img.sm"
-              :srcset="`${etapa.img.sm} 500w,
-                        ${etapa.img.md} 900w,
-                        ${etapa.img.lg} 1600w`"
+              :src="imagePath(etapa.img.sm)"
+              :srcset="`${imagePath(etapa.img.sm)} 500w,
+                        ${imagePath(etapa.img.md)} 900w,
+                        ${imagePath(etapa.img.lg)} 1600w`"
               sizes="(min-width: 960px) 50vw, 100vw"
             />
           </template>
@@ -40,7 +40,10 @@
 </template>
 
 <script>
+import imageMixin from '@/mixins/images'
+
 export default {
+  mixins: [imageMixin],
   props: {
     etapa: {
       type: Object,
