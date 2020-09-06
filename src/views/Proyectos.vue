@@ -1,5 +1,5 @@
 <template>
-  <HeroSecondary :header="header" :max-height="'100vh'" />
+  <HeroSecondary :header="header" class="en-construccion" />
 </template>
 
 <script>
@@ -23,3 +23,9 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+  .en-construccion {
+    height: 100vh;
+  }
+</style>

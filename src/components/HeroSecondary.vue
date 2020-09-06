@@ -1,6 +1,6 @@
 <template>
   <v-img
-    :max-height="maxHeight"
+    class="hero-secondary"
     :src="imagePath(header.xs)"
     :srcset="`${imagePath(header.xs)} 640w,
               ${imagePath(header.sm)} 1280w,
@@ -34,12 +34,18 @@ export default {
     header: {
       type: Object,
       required: true
-    },
-    maxHeight: {
-      type: String,
-      required: false,
-      default: '45vh'
     }
   }
 }
 </script>
+
+<style lang="scss" scoped>
+  .hero-secondary {
+    height: 40vw;
+    max-height: 100vh;
+
+    @media screen and (max-width: 900px) {
+      height: 70vh;
+    }
+  }
+</style>

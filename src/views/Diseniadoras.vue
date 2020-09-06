@@ -41,13 +41,13 @@ export default {
           avatar: '/lmedina-min.png',
           name: 'Laura Beatriz Medina',
           job: 'Paisajista',
-          profile: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, fugiat ratione.'
+          profile: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium accusantium nostrum animi quo architecto ex quaerat earum! Dolore, iste quas exercitationem ipsa asperiores non. Iste atque magnam maxime.'
         },
         {
-          avatar: '/lb-min.png',
-          name: 'Laura 2',
+          avatar: '/lb-2-min.png',
+          name: 'Maria Laura Bustos',
           job: 'Arquitecta',
-          profile: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, fugiat ratione.'
+          profile: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium accusantium nostrum animi quo architecto ex quaerat earum! Dolore, iste quas exercitationem ipsa asperiores non. Iste atque magnam maxime.'
         }
       ]
     }

@@ -3,9 +3,12 @@
     <h2 class="text-h4 text-uppercase mb-6">Contacto</h2>
 
     <v-card class="pa-4">
-      <v-card-title class="mb-3">
+      <v-card-title class="mb-3 justify-center">
         <h3 class="text-h6">¡Envianos un mensaje!</h3>
       </v-card-title>
+      <v-row v-if="sent" class="justify-center mb-3">
+        <span :class="[error ? 'error' : 'light-green darken-4', 'message white--text px-4 py-2']">{{ sendEmailRes }}</span>
+      </v-row>
       <v-card-text>
         <v-form ref="form" v-model="valid" lazy-validation>
           <v-text-field color="light-green darken-4" outlined clearable label="Nombre" v-model="name" prepend-icon="mdi-account" :rules="nameRule"></v-text-field>
@@ -13,9 +16,10 @@
           <v-textarea color="light-green darken-4" outlined label="Mensaje" v-model="message" prepend-icon="mdi-pencil" :rules="messageRule"></v-textarea>
         </v-form>
       </v-card-text>
-      <v-card-actions>
+      <v-card-actions class="justify-center">
         <v-btn
           x-large
+          :loading="isSending"
           color="amber darken-4"
           class="white--text"
           :disabled="!valid"
@@ -50,12 +54,18 @@ export default {
         v => !!v || 'Es necesario que ingreses un mensaje.',
         v => v.length >= 10 || 'Ingresá al menos 10 caracteres.'
       ],
-      valid: true
+      valid: true,
+      isSending: false,
+      sent: false,
+      error: false,
+      sendEmailRes: ''
     }
   },
   methods: {
     validate () {
       if (this.$refs.form.validate()) {
+        this.isSending = true
+
         axios
           .post('https://8c15r458i7.execute-api.us-east-1.amazonaws.com/dev/mail', {
             email: this.email,
@@ -63,13 +73,30 @@ export default {
             text: this.message
           })
           .then(res => {
-            console.log(res)
+            this.isSending = false
+            this.sent = true
+            this.error = false
+            this.sendEmailRes = 'Su mensaje ha sido enviado!'
+            this.$refs.form.resetValidation()
+            this.name = ''
+            this.email = ''
+            this.message = ''
           })
           .catch(err => {
-            console.log(err)
+            this.isSending = false
+            this.sent = true
+            this.error = true
+            this.sendEmailRes = 'Error al enviar el mensaje.'
+            console.warn(err)
           })
       }
     }
   }
 }
 </script>
+
+<style lang="scss" scoped>
+  .message {
+   border-radius: 4px;
+  }
+</style>

@@ -43,12 +43,12 @@
         <template v-else>
           <v-dialog v-model="dialog" fullscreen hide-overlay transition="dialog-bottom-transition">
             <template v-slot:activator="{ on, attrs }">
-              <v-app-bar-nav-icon class="white--text" v-bind="attrs" v-on="on"></v-app-bar-nav-icon>
+              <v-app-bar-nav-icon x-large class="white--text" v-bind="attrs" v-on="on"></v-app-bar-nav-icon>
             </template>
               <v-list class="d-flex flex-column" height="100vh" color="rgba(0, 0, 0, .9)">
                 <v-list-item class="flex-grow-0 align-self-end">
                   <v-btn text color="white" icon @click="dialog = false">
-                    <v-icon>mdi-close</v-icon>
+                    <v-icon large>mdi-close</v-icon>
                   </v-btn>
                 </v-list-item>
                 <v-list-item

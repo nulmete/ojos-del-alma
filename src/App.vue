@@ -73,5 +73,9 @@ body {
 
 .section-spacing {
   margin-bottom: 10rem;
+
+  @media screen and (max-width: 900px) {
+    margin-bottom: 7rem;
+  }
 }
 </style>

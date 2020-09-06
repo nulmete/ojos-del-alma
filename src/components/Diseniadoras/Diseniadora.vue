@@ -1,9 +1,9 @@
 <template>
-  <v-col cols="6">
-    <v-card color="transparent" flat tile>
+  <v-col cols="12" md="6">
+    <v-card color="transparent" flat>
       <v-row dense class="flex-column">
         <v-col class="d-flex justify-center align-center">
-          <v-avatar size="165">
+          <v-avatar size="200">
             <v-img :src="imagePath(diseniadora.avatar)" />
           </v-avatar>
         </v-col>
