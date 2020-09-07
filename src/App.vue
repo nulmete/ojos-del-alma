@@ -1,37 +1,92 @@
 <template>
   <v-app>
     <Navbar />
+
     <v-main class="grey lighten-4">
       <router-view />
     </v-main>
-    <v-footer padless v-if="$route.path !== '/proyectos'">
-      <v-card
-        flat
-        tile
-        width="100%"
-        class="grey darken-4 white--text text-center"
-      >
-        <v-card-text>
-          <v-btn
-            v-for="icon in icons"
-            :key="icon"
-            class="mx-4 white--text"
-            icon
-          >
-            <v-icon size="24px">{{ icon }}</v-icon>
-          </v-btn>
-        </v-card-text>
 
-        <v-card-text class="white--text">
-          {{ new Date().getFullYear() }} — <strong>5 Sentidos</strong>
-        </v-card-text>
-      </v-card>
+    <v-footer class="py-16 grey darken-4 white--text" v-if="$route.path !== '/proyectos'">
+      <v-container>
+        <v-row class="justify-center mb-16">
+          <v-col cols="12" class="text-center">
+            <h2 class="text-h4 font-weight-light mb-6">Contáctenos</h2>
+          </v-col>
+
+          <v-col cols="12" v-if="sent" class="d-flex justify-center mb-3">
+            <span :class="[error ? 'error' : 'light-green darken-4', 'message white--text px-4 py-2']">{{ sendEmailRes }}</span>
+          </v-col>
+
+          <v-form ref="form" v-model="valid" lazy-validation>
+            <v-row>
+              <v-col cols="12" sm="6">
+                <v-text-field
+                  dark
+                  clearable
+                  label="Nombre"
+                  v-model="name"
+                  prepend-icon="mdi-account"
+                  :rules="nameRule"
+                />
+              </v-col>
+              <v-col cols="12" sm="6">
+                <v-text-field
+                  dark
+                  clearable
+                  label="Correo electrónico"
+                  v-model="email"
+                  prepend-icon="mdi-email"
+                  :rules="emailRule"
+                />
+              </v-col>
+              <v-col cols="12">
+                <v-textarea
+                  dark
+                  label="Mensaje"
+                  v-model="message"
+                  prepend-icon="mdi-pencil"
+                  :rules="messageRule"
+                />
+              </v-col>
+              <v-col cols="12" class="d-flex justify-center">
+                <v-btn
+                  x-large
+                  :loading="isSending"
+                  outlined
+                  dark
+                  :disabled="!valid"
+                  @click="validate"
+                >
+                  Enviar mensaje
+                </v-btn>
+              </v-col>
+            </v-row>
+          </v-form>
+        </v-row>
+
+        <v-row class="align-center">
+          <v-col cols="6">
+            <span class="text-body-2">2020 | Diseñado por Nicolás Ulmete</span>
+          </v-col>
+          <v-col cols="6" class="d-flex justify-end social">
+            <v-btn
+              v-for="icon in icons"
+              :key="icon"
+              class="white--text"
+              icon
+            >
+              <v-icon size="32px">{{ icon }}</v-icon>
+            </v-btn>
+          </v-col>
+        </v-row>
+      </v-container>
     </v-footer>
   </v-app>
 </template>
 
 <script>
 import Navbar from '@/components/Navbar'
+import axios from 'axios'
 
 export default {
   name: 'App',
@@ -43,7 +98,58 @@ export default {
       icons: [
         'mdi-facebook',
         'mdi-instagram'
-      ]
+      ],
+      name: '',
+      nameRule: [
+        v => !!v || 'Es necesario que ingreses tu nombre.',
+        v => v.length >= 2 || 'Ingresá al menos 2 caracteres.'
+      ],
+      email: '',
+      emailRule: [
+        v => !!v || 'Es necesario que ingreses tu dirección de correo electrónico.',
+        v => /.+@.+/.test(v) || 'La dirección de correo electrónico no es válida. Asegurate de que tenga un formato como este: ejemplo@email.com'
+      ],
+      message: '',
+      messageRule: [
+        v => !!v || 'Es necesario que ingreses un mensaje.',
+        v => v.length >= 10 || 'Ingresá al menos 10 caracteres.'
+      ],
+      valid: true,
+      isSending: false,
+      sent: false,
+      error: false,
+      sendEmailRes: ''
+    }
+  },
+  methods: {
+    validate () {
+      if (this.$refs.form.validate()) {
+        this.isSending = true
+
+        axios
+          .post('https://8c15r458i7.execute-api.us-east-1.amazonaws.com/dev/mail', {
+            email: this.email,
+            subject: 'Hardcoded | ' + this.name,
+            text: this.message
+          })
+          .then(res => {
+            this.isSending = false
+            this.sent = true
+            this.error = false
+            this.sendEmailRes = 'Su mensaje ha sido enviado!'
+            this.$refs.form.resetValidation()
+            this.name = ''
+            this.email = ''
+            this.message = ''
+          })
+          .catch(err => {
+            this.isSending = false
+            this.sent = true
+            this.error = true
+            this.sendEmailRes = 'Error al enviar el mensaje.'
+            console.warn(err)
+          })
+      }
     }
   }
 }
@@ -71,11 +177,11 @@ body {
   background-color: #C5E1A5;
 }
 
-.section-spacing {
-  margin-bottom: 10rem;
+.social button:not(:last-of-type) {
+  margin-right: 1rem;
+}
 
-  @media screen and (max-width: 900px) {
-    margin-bottom: 7rem;
-  }
+.message {
+  border-radius: 4px;
 }
 </style>
