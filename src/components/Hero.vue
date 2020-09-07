@@ -48,7 +48,7 @@ export default {
           sm: '/portada-2-640w-min.jpg',
           md: '/portada-2-1280w-min.jpg',
           lg: '/portada-2-1920w-min.jpg',
-          text: 'Text 2'
+          text: 'Quien no planta el jardín en su interior, no planta jardines en el exterior y tampoco pasea por ellos.'
         },
         {
           sm: '/portada-3-640w-min.jpg',
