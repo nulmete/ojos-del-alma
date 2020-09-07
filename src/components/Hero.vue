@@ -42,7 +42,7 @@ export default {
           sm: '/portada-1-640w-min.jpg',
           md: '/portada-1-1280w-min.jpg',
           lg: '/portada-1-1920w-min.jpg',
-          text: 'Text 1'
+          text: 'Todo jardín empieza con una historia de amor. Antes de que cualquier árbol sea plantado o un estanque construido, es necesario que ellos hayan nacido dentro del alma.'
         },
         {
           sm: '/portada-2-640w-min.jpg',
