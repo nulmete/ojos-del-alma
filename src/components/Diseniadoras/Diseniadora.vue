@@ -8,15 +8,12 @@
           </v-avatar>
         </v-col>
         <v-col>
-          <v-card-title class="justify-center">
+          <v-card-title class="justify-center font-weight-bold">
             {{ diseniadora.name }}
           </v-card-title>
-          <v-card-subtitle class="text-center text-uppercase">
+          <v-card-subtitle class="text-center text-uppercase font-weight-bold">
             {{ diseniadora.job }}
           </v-card-subtitle>
-          <v-card-text class="text-center">
-            {{ diseniadora.profile }}
-          </v-card-text>
         </v-col>
       </v-row>
     </v-card>

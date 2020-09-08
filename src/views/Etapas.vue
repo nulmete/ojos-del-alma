@@ -1,23 +1,18 @@
 <template>
-  <div class="etapas">
-    <section class="section-spacing">
-      <HeroSecondary :header="header" />
-    </section>
+  <div class="etapas section-spacing">
+    <HeroSecondary :header="header" />
 
-    <section class="section-spacing">
-      <v-container>
-        <Etapa
-          v-for="(etapa, i) in etapas"
-          :key="etapa.name"
-          :etapa="etapa"
-        >
-          <!-- render divider only if child is not the last one -->
-          <template v-slot:divider>
-            <v-divider v-if="etapas.length - i > 1" class="my-10" />
-          </template>
-        </Etapa>
-      </v-container>
-    </section>
+    <v-container>
+      <Etapa
+        v-for="(etapa, i) in etapas"
+        :key="etapa.name"
+        :etapa="etapa"
+      >
+        <template v-slot:divider>
+          <v-divider v-if="etapas.length - i > 1" class="my-10" />
+        </template>
+      </Etapa>
+    </v-container>
   </div>
 </template>
 

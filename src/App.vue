@@ -177,6 +177,18 @@ body {
   background-color: #C5E1A5;
 }
 
+.section-spacing > *:not(last-child) {
+  margin-bottom: 6.5rem !important;
+}
+
+.section-inner-spacing > * + * {
+  margin-top: 5rem;
+}
+
+.v-overlay__scrim {
+  opacity: .6 !important;
+}
+
 .social button:not(:last-of-type) {
   margin-right: 1rem;
 }

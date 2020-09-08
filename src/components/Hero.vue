@@ -19,16 +19,15 @@
         >
         <v-overlay class="overlay" :absolute="true">
           <v-container class="spacing text-center">
-            <h1 class="text-h4 text-md-h3 text-lg-h2 font-weight-bold text-center grey--text text--lighten-5 mb-2">
+            <h1 class="text-h3 text-md-h2 font-weight-bold mb-3">
               {{ slide.title }}
             </h1>
-            <h4 class="subtitle-1 font-weight-light text-center grey--text text--lighten-5 mb-6">
+            <h4 class="subtitle-2 text-md-subtitle-1 font-weight-light mb-9">
               {{ slide.text }}
             </h4>
             <v-btn
               x-large
               color="light-green darken-4"
-              class="white--text"
             >
               Conocé más
             </v-btn>
@@ -74,9 +73,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss">
-  .v-overlay__scrim {
-    opacity: .65 !important;
-  }
-</style>

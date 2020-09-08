@@ -1,28 +1,24 @@
 <template>
-  <v-img
-    class="hero-secondary"
-    :src="imagePath(header.xs)"
-    :srcset="`${imagePath(header.xs)} 640w,
-              ${imagePath(header.sm)} 1280w,
-              ${imagePath(header.md)} 1920w`"
-  >
-    <v-overlay :absolute="true">
-      <v-row
-        class="fill-height"
-        align="center"
-        justify="center"
-      >
-        <v-col class="text-center" cols="12">
-          <h1 class="text-h4 text-lg-h3 font-weight-thin text-center grey--text text--lighten-5 mb-2">
+  <header>
+    <v-img
+      class="hero-secondary"
+      :src="imagePath(header.xs)"
+      :srcset="`${imagePath(header.xs)} 640w,
+                ${imagePath(header.sm)} 1280w,
+                ${imagePath(header.md)} 1920w`"
+    >
+      <v-overlay :absolute="true">
+        <v-row class="align-center flex-column">
+          <h1 class="text-h3 text-md-h2 mb-3">
             {{ header.title }}
           </h1>
-          <h4 class="text-subtitle-2 text-md-subtitle-1">
+          <h4 class="text-subtitle-2 text-md-subtitle-1 font-weight-light">
             {{ header.subtitle }}
           </h4>
-        </v-col>
-      </v-row>
-    </v-overlay>
-  </v-img>
+        </v-row>
+      </v-overlay>
+    </v-img>
+  </header>
 </template>
 
 <script>
@@ -39,13 +35,18 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
   .hero-secondary {
-    height: 40vw;
+    height: 65vh;
     max-height: 100vh;
 
+    .v-image__image {
+      background-attachment: fixed;
+      background-position: top top !important;
+    }
+
     @media screen and (max-width: 900px) {
-      height: 70vh;
+      height: 55vh;
     }
   }
 </style>
