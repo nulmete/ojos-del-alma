@@ -24,8 +24,8 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
   .en-construccion {
-    height: 100vh;
+    height: 100vh !important;
   }
 </style>

@@ -1,6 +1,6 @@
 <template>
-  <v-app-bar tag="nav" absolute flat color="transparent">
-    <v-btn icon :to="{ name: 'inicio' }" exact text color="grey lighten-5">
+  <v-app-bar tag="nav" absolute flat color="transparent" class="white--text">
+    <v-btn icon :to="{ name: 'inicio' }" exact text color="white">
       <v-icon>mdi-home</v-icon>
     </v-btn>
 
@@ -11,7 +11,7 @@
           <template v-slot:activator="{ on, attrs }">
             <v-btn
                 text
-                color="grey lighten-5"
+                color="white"
                 v-bind="attrs"
                 v-on="on"
             >
@@ -30,11 +30,11 @@
           </v-list>
       </v-menu>
 
-      <v-btn :to="{ name: 'diseniadoras' }" text color="grey lighten-5">
-        Las diseñadoras
+      <v-btn :to="{ name: 'diseniadoras' }" text color="white">
+        Quiénes somos
       </v-btn>
 
-      <v-btn text color="grey lighten-5">
+      <v-btn text color="white">
         Contacto
       </v-btn>
     </template>
@@ -73,13 +73,13 @@ export default {
     return {
       links: [
         { text: 'Proyectos', route: { name: 'proyectos' } },
-        { text: 'Etapas', route: { name: 'etapas' } }
+        { text: 'Cómo trabajamos', route: { name: 'etapas' } }
       ],
       mobileLinks: [
         { text: 'Inicio', route: { name: 'inicio' } },
         { text: 'Proyectos', route: { name: 'proyectos' } },
-        { text: 'Etapas', route: { name: 'etapas' } },
-        { text: 'Las Diseñadoras', route: { name: 'diseniadoras' } }
+        { text: 'Cómo trabajamos', route: { name: 'etapas' } },
+        { text: 'Quiénes somos', route: { name: 'diseniadoras' } }
       ],
       dialog: false
     }

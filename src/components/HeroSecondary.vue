@@ -12,9 +12,9 @@
           <h1 class="text-h3 text-md-h2 mb-3">
             {{ header.title }}
           </h1>
-          <h4 class="text-subtitle-2 text-md-subtitle-1 font-weight-light">
+          <h3 class="text-subtitle-2 text-md-subtitle-1 font-weight-light">
             {{ header.subtitle }}
-          </h4>
+          </h3>
         </v-row>
       </v-overlay>
     </v-img>
