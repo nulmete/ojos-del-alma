@@ -129,7 +129,7 @@ export default {
         axios
           .post('https://8c15r458i7.execute-api.us-east-1.amazonaws.com/dev/mail', {
             email: this.email,
-            subject: 'Hardcoded | ' + this.name,
+            subject: 'Nuevo e-mail | ' + this.name,
             text: this.message
           })
           .then(res => {
