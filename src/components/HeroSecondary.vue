@@ -1,7 +1,7 @@
 <template>
-  <header>
+  <header class="hero-secondary">
     <v-img
-      class="hero-secondary"
+      class="hero-secondary__img"
       :src="imagePath(header.xs)"
       :srcset="`${imagePath(header.xs)} 640w,
                 ${imagePath(header.sm)} 1280w,
@@ -38,15 +38,14 @@ export default {
 <style lang="scss">
   .hero-secondary {
     height: 65vh;
-    max-height: 100vh;
+
+    &__img {
+      height: 100%;
+    }
 
     .v-image__image {
       background-attachment: fixed;
       background-position: top top !important;
-    }
-
-    @media screen and (max-width: 900px) {
-      height: 55vh;
     }
   }
 </style>

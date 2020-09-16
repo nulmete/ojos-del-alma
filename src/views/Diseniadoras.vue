@@ -4,6 +4,15 @@
 
     <v-container class="section-inner-spacing">
 
+      <section class="row">
+        <v-col cols="12">
+          <h2 class="text-h4 text-uppercase text-center mb-6">Equipo</h2>
+        </v-col>
+        <Diseniadora v-for="(diseniadora, i) in diseniadoras" :key="i" :diseniadora="diseniadora" />
+      </section>
+
+      <v-divider></v-divider>
+
       <section class="section-inner-spacing">
         <v-row>
           <v-col cols="12" md="5">
@@ -48,14 +57,14 @@
         </v-row>
       </section>
 
-      <v-divider></v-divider>
+      <!-- <v-divider></v-divider> -->
 
-      <section class="row">
+      <!-- <section class="row">
         <v-col cols="12">
           <h2 class="text-h4 text-md-h3 font-weight-bold text-center mb-4">Equipo</h2>
         </v-col>
         <Diseniadora v-for="(diseniadora, i) in diseniadoras" :key="i" :diseniadora="diseniadora" />
-      </section>
+      </section> -->
 
     </v-container>
   </div>
