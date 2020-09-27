@@ -57,7 +57,7 @@
               :key="link.text"
               :to="link.route"
             >
-              <v-list-item-title @click="dialog = false" class="white--text text-uppercase text-h5 text-sm-h4 font-weight-thin">
+              <v-list-item-title @click="dialog = false" class="white--text text-uppercase text-h5 text-sm-h4 font-weight-light">
                 {{ link.text }}
               </v-list-item-title>
             </v-list-item>

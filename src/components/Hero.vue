@@ -23,7 +23,7 @@
                 <h1 class="text-h3 text-md-h2 font-weight-bold text-center mb-3">
                   {{ slide.title }}
                 </h1>
-                <h4 class="subtitle-2 text-md-subtitle-1 font-weight-light text-center mb-9">
+                <h4 class="subtitle-2 text-md-subtitle-1 text-center mb-9">
                   {{ slide.text }}
                 </h4>
                 <v-btn
