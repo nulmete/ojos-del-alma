@@ -3,7 +3,6 @@
     <v-carousel
       cycle
       height="100vh"
-      hide-delimiters
       hide-delimiter-background
       :show-arrows="false"
     >
