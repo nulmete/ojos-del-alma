@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <Navbar />
+    <Navbar @scroll-to-contact="scrollToContact" />
 
     <v-main class="grey lighten-4">
       <router-view />
@@ -22,6 +22,15 @@ export default {
   components: {
     Navbar,
     Footer
+  },
+  methods: {
+    scrollToContact () {
+      const footer = this.$el.getElementsByClassName('contact-footer')[0]
+
+      if (footer) {
+        footer.scrollIntoView({ behavior: 'smooth' })
+      }
+    }
   }
 }
 </script>

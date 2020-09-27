@@ -34,7 +34,7 @@
         Quiénes somos
       </v-btn>
 
-      <v-btn text color="white">
+      <v-btn text color="white" @click="$emit('scroll-to-contact')">
         Contacto
       </v-btn>
     </template>

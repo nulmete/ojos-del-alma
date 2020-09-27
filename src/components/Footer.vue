@@ -1,5 +1,5 @@
 <template>
-  <v-footer class="py-16 grey darken-4 white--text" v-if="$route.path !== '/proyectos'">
+  <v-footer class="py-16 grey darken-4 white--text contact-footer" v-if="$route.path !== '/proyectos'">
     <v-container>
       <v-row class="justify-center mb-16">
         <v-col cols="12" class="text-center">
