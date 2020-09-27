@@ -59,7 +59,7 @@
 
       <v-row>
         <v-col cols="12" sm="6" class="d-flex justify-center">
-          <v-img src="@/assets/img/logo.png" max-width="150"></v-img>
+          <v-img :src="imagePath('/logo.png')" max-width="150"></v-img>
         </v-col>
         <v-col cols="12" sm="6" class="d-flex justify-center align-center social">
           <v-btn
@@ -79,8 +79,11 @@
 
 <script>
 import axios from 'axios'
+import imageMixin from '@/mixins/images'
 
 export default {
+  name: 'Footer',
+  mixins: [imageMixin],
   data () {
     return {
       socials: [

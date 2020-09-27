@@ -1,7 +1,7 @@
 <template>
   <v-app-bar tag="nav" flat absolute color="rgba(0, 0, 0, 0.6)" class="white--text px-5">
     <v-btn icon :to="{ name: 'inicio' }" exact exact-active-class="home" text color="white">
-      <v-img src="@/assets/img/logo-nav-white.png" max-width="40" title="Ojos del Alma"></v-img>
+      <v-img :src="imagePath('/logo-nav-white.png')" max-width="40" title="Ojos del Alma"></v-img>
     </v-btn>
 
     <v-spacer />
@@ -68,7 +68,11 @@
 </template>
 
 <script>
+import imageMixin from '@/mixins/images'
+
 export default {
+  name: 'Navbar',
+  mixins: [imageMixin],
   data () {
     return {
       links: [
