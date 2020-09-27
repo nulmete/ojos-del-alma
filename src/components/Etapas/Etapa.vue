@@ -9,7 +9,9 @@
           {{ etapa.description }}
         </p>
       </v-col>
-      <v-spacer></v-spacer>
+
+      <v-spacer class="etapa__spacer"></v-spacer>
+
       <v-col cols="12" md="6" class="d-flex">
           <template v-if="Array.isArray(etapa.img)">
             <v-col cols="6" v-for="(img, i) in etapa.img" :key="i">

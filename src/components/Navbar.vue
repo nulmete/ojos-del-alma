@@ -1,7 +1,7 @@
 <template>
-  <v-app-bar tag="nav" absolute flat color="transparent" class="white--text">
-    <v-btn icon :to="{ name: 'inicio' }" exact text color="white">
-      <v-icon>mdi-home</v-icon>
+  <v-app-bar tag="nav" flat absolute color="rgba(0, 0, 0, 0.6)" class="white--text px-5">
+    <v-btn icon :to="{ name: 'inicio' }" exact exact-active-class="home" text color="white">
+      <v-img src="@/assets/img/logo-nav-white.png" max-width="40" title="Ojos del Alma"></v-img>
     </v-btn>
 
     <v-spacer />
@@ -91,3 +91,9 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+  .home::before {
+    opacity: 0 !important;
+  }
+</style>

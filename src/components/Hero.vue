@@ -28,9 +28,10 @@
                   {{ slide.text }}
                 </h4>
                 <v-btn
-                  x-large
+                  large
                   elevation="4"
                   color="light-green darken-4"
+                  :to="{ name: slide.to }"
                 >
                   Conocé más
                 </v-btn>
@@ -57,21 +58,24 @@ export default {
           md: '/portada-1-1280w-min.jpg',
           lg: '/portada-1-1920w-min.jpg',
           title: 'Diseñamos tu jardín',
-          text: 'Todo jardín empieza con una historia de amor. Antes de que cualquier árbol sea plantado o un estanque construido, es necesario que ellos hayan nacido dentro del alma.'
+          text: 'Todo jardín empieza con una historia de amor. Antes de que cualquier árbol sea plantado o un estanque construido, es necesario que ellos hayan nacido dentro del alma.',
+          to: 'etapas'
         },
         {
           sm: '/portada-2-640w-min.jpg',
           md: '/portada-2-1280w-min.jpg',
           lg: '/portada-2-1920w-min.jpg',
           title: 'Creamos tu entorno verde',
-          text: 'Quien no planta un jardín en su interior, no planta jardines en el exterior y tampoco pasea por ellos.'
+          text: 'Quien no planta un jardín en su interior, no planta jardines en el exterior y tampoco pasea por ellos.',
+          to: 'diseniadoras'
         },
         {
           sm: '/portada-3-640w-min.jpg',
           md: '/portada-3-1280w-min.jpg',
           lg: '/portada-3-1920w-min.jpg',
           title: 'Remodelamos tu jardín',
-          text: 'Reinventamos tu espacio conectándolo con la naturaleza, donde las dimensiones no importan, donde el protagonista sos vos. Viví la experiencia natural con los cinco sentidos.'
+          text: 'Reinventamos tu espacio conectándolo con la naturaleza, donde las dimensiones no importan, donde el protagonista sos vos. Viví la experiencia natural con los cinco sentidos.',
+          to: 'proyectos'
         }
       ]
     }
