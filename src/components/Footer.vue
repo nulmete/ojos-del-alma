@@ -73,6 +73,12 @@
           </v-btn>
         </v-col>
       </v-row>
+
+      <v-row class="mt-16 justify-center">
+        <p class="text-overline">
+          2020 - Diseñado por <a class="designer font-weight-bold" href="https://www.linkedin.com/in/nicolasulmete/">Nicolás Ulmete</a>
+        </p>
+      </v-row>
     </v-container>
   </v-footer>
 </template>
@@ -155,5 +161,10 @@ export default {
 <style lang="scss" scoped>
   .message {
     border-radius: 4px;
+  }
+
+  .designer {
+    text-decoration: none;
+    color: #1E88E5;
   }
 </style>
